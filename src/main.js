@@ -1,5 +1,6 @@
 // require('./logPlugin'); // 要用node 啟
 // require('./eslintPlugin'); // 要用node 啟
+import "./less/index.less";
 
 // --------------用webpack啟動---------------------
 const buttonEle = document.getElementById("button");

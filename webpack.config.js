@@ -40,6 +40,14 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.less$/,
+        use: [
+          "style-loader", //将css内容变成style标签插入到html中去
+          "css-loader", //一般会解析url合@import等语法
+          "less-loader", //将less=>css
+        ],
+      },
     ]
   },
   plugins: [
