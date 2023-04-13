@@ -14,4 +14,16 @@ function styleLoader(styleSource) {
   /********* MUST return something ***********/
 }
 
+styleLoader.pitch = function () {
+  const fileName = path.basename(this.resourcePath);
+  console.log(`${fileName}: 执行 less-loader 的pitch阶段`);
+  /********* DO SOMETHING HERE ***********/
+  let script = `
+    let style=document.createElement("style");
+    style.innerHTML=require("!!../loaders/css-loader.js!../loaders/less-loader.js!./index.less");
+    document.head.appendChild(style)
+  `;
+  return script;
+};
+
 module.exports = styleLoader;

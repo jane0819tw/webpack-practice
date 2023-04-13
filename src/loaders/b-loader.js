@@ -8,6 +8,7 @@ function BLoader(content, map, meta) {
 BLoader.pitch = function (remainingRequest, previousRequest, data) {
   console.log(remainingRequest)
   console.log(previousRequest)
+  // data 可注入上下文，在 normal階段取得值
   console.log(data)
   const fileName = path.basename(this.resourcePath);
   console.log(`${fileName}: BLoader的pitch阶段`);

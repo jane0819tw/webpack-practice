@@ -21,13 +21,13 @@ module.exports = {
   },
   module: {
     rules: [
-      // => custom loader example
-      {
-        test: /\.js$/,
-        use: [
-          'c-loader', 'b-loader', "a-loader",
-        ],
-      },
+      // // => custom loader example
+      // {
+      //   test: /\.js$/,
+      //   use: [
+      //     'c-loader', 'b-loader', "a-loader",
+      //   ],
+      // },
       // => babel loader example
       {
         test: /\.js$/,
