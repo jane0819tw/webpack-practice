@@ -21,12 +21,25 @@ module.exports = {
   },
   module: {
     rules: [
+      // => custom loader example
       {
         test: /\.js$/,
         use: [
           'c-loader', 'b-loader', "a-loader",
         ],
-      }
+      },
+      // => babel loader example
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: "my-babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [
