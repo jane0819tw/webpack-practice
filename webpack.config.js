@@ -19,6 +19,10 @@ module.exports = {
   resolveLoader: {
     modules: ['src/loaders', 'node_modules']
   },
+  devServer: {
+    hot: true, //开启热更新，这个是关键！！！
+    port: 9000, //设置端口号
+  },
   module: {
     rules: [
       // // => custom loader example

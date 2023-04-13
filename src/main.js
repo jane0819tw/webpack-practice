@@ -16,4 +16,18 @@ buttonEle.onclick = function () {
   });
 };
 
+/***************** HOT RERENDER ******************/
+const render = () => {
+  const rootDom = document.getElementById("root");
+  rootDom.innerText = rootDom.innerText + '1';
+};
+
+render();
+
+//要实现热更新，这段代码并不可少，描述当模块被更新后做什么 
+if (module.hot) {
+  console.log('renderrrr....');
+  render();
+}
+
 
