@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 // module.exports = {
 //   mode: "development", //防止代码压缩
 //   entry: "./src/main.js",
@@ -15,4 +16,20 @@ module.exports = {
     filename: "main.js", //定义打包后的文件名称
     path: path.resolve(__dirname, "./dist"), //必须是绝对路径
   },
+  resolveLoader: {
+    modules: ['src/loaders', 'node_modules']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        use: [
+          'c-loader', 'b-loader', "a-loader",
+        ],
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: './src/index.html' })
+  ]
 };
