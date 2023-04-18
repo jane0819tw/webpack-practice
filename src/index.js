@@ -1,6 +1,6 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 
 import App from "./pages/App.js";
 
@@ -12,4 +12,5 @@ ReactDOM.render(
   rootElement
 );
 
-hot(module)(App);
+// hot(module)(App);
+// hot(App);

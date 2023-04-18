@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // module.exports = {
@@ -58,6 +59,18 @@ module.exports = {
   mode: "development",
   devtool: false, // "source-map",//查看打包后的代码更方便
   entry: "./src/index.js", //入口
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: '[name].bundle.js',
+    clean: true, // 會先清空dist 再打包
+    // filename: 'js/[name].[hash].js', // [name] : entry的key,
+    // publicPath設成/，BrowserRouter才不會壞掉
+    // publicPath: '/',
+    // chunkFilename: '[name]-[hash].js',
+  },
+  // optimization: {
+  //   runtimeChunk: 'single',
+  // },
   module: {
     rules: [
       {
@@ -75,7 +88,14 @@ module.exports = {
     // hot: false, //开启热更新，这个是关键！！！
     port: 9000, //设置端口号
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src/"),
+    },
+    extensions: [".js", ".jsx"],
+  },
   plugins: [
+    // new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html', title: 'Development', })
   ]
 };
