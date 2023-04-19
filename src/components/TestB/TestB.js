@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { hot } from 'react-hot-loader/root';
-
 
 const TestB = () => {
-  const [childValue, setChildValue] = useState(3);
+  const [childValue, setChildValue] = useState(0);
   const NAME = 'TestB';
   const changeValue = () => {
     setChildValue(prev => prev + 1);
@@ -13,5 +11,4 @@ const TestB = () => {
     <button onClick={() => changeValue()}>change {NAME} </button>
   </div>
 };
-// export default TestB;
-export default hot(TestB);
+export default TestB;

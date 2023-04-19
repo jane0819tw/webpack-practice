@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { hot } from 'react-hot-loader/root';
 
 
 const TestA = () => {
@@ -9,10 +8,9 @@ const TestA = () => {
     setChildValue(prev => prev + 1);
   };
   return <div>
-    <p>這是 {NAME} component 的值: {childValue}</p>
+    <p>這是 {NAME} component 的值ss: {childValue}</p>
     <button onClick={() => changeValue()}>change {NAME} </button>
   </div>
 };
 
-// export default TestA;
-export default hot(TestA);
+export default TestA;

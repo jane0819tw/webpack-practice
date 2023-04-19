@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React, { useState } from "react";
 import TestA from '@/components/TestA/TestA';
 import TestB from '@/components/TestB/TestB';
@@ -14,4 +15,4 @@ const App = () => {
     <TestB />
   </div>
 };
-export default App;
+export default hot(App);

@@ -61,8 +61,8 @@ module.exports = {
   entry: "./src/index.js", //入口
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.js',
     clean: true, // 會先清空dist 再打包
+    filename: '[name].bundle.js',
     // filename: 'js/[name].[hash].js', // [name] : entry的key,
     // publicPath設成/，BrowserRouter才不會壞掉
     // publicPath: '/',
@@ -95,7 +95,6 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html', title: 'Development', })
   ]
 };
