@@ -1,13 +1,12 @@
+import { hot } from 'react-hot-loader/root';
 import React from "react";
 import ReactDOM from "react-dom";
-
-import App from "./containers/App/App";
+import CustomRoute from "@/routers";
 
 const rootElement = document.getElementById("root");
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <CustomRoute />,
   rootElement
 );
 

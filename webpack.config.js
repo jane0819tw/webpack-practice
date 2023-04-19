@@ -1,6 +1,6 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 // module.exports = {
 //   mode: "development",
@@ -87,6 +87,7 @@ module.exports = {
   devServer: {
     // hot: false, //开启热更新，这个是关键！！！
     port: 9000, //设置端口号
+    // historyApiFallback: true,
   },
   resolve: {
     alias: {
@@ -95,6 +96,7 @@ module.exports = {
     extensions: [".js", ".jsx"],
   },
   plugins: [
+    new ReactRefreshPlugin(),
     new HtmlWebpackPlugin({ template: './src/index.html', title: 'Development', })
   ]
 };

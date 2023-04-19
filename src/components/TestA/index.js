@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
-const TestB = () => {
+
+const TestA = () => {
   const [childValue, setChildValue] = useState(0);
-  const NAME = 'TestB';
+  const NAME = 'TestA';
   const changeValue = () => {
     setChildValue(prev => prev + 1);
   };
   return <div>
-    <p>這是 {NAME}  component 的值: {childValue}</p>
+    <p>這是{NAME} component 的值: {childValue}</p>
     <button onClick={() => changeValue()}>change {NAME} </button>
   </div>
 };
-export default TestB;
+
+export default TestA;
